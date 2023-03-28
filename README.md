@@ -3,20 +3,20 @@
 
 ## Functions
 
-1 - General Info: General information about the vehicle. (VIN, software size and version etc.)
-2 - Signature: Get the installed software signatures for all units, including maps.
-3 - Active Partition: See the active partition name.
-4 - Reboot MCU: (Beta) Soft-reboot the MCU.
-5 - Update From URL: Update the MCU from given URL.
-6 - Redeploy: Do a software redeploy.
-7 - Service Redeploy: Do a service redeploy.
-8 - Factory Redeploy: Do a factory redeploy.
-9 - Format SD Card: (Beta) Format the maps SD card.
-10 - Check SD Card: (Beta) Check the maps SD card.
-11 - Reset Updater: Re-initialize the CID-Updater.
-12 - Watch Update: Watch the current update status and show logs.
-13 - Go Staged: (Beta) Set the software to be staged.
-14 - Retry Go Staged: (Beta) Retry to stage the software.
+- General Info: General information about the vehicle. (VIN, software size and version etc.)
+- Signature: Get the installed software signatures for all units, including maps.
+- Active Partition: See the active partition name.
+- Reboot MCU: (Beta) Soft-reboot the MCU.
+- Update From URL: Update the MCU from given URL.
+- Redeploy: Do a software redeploy.
+- Service Redeploy: Do a service redeploy.
+- Factory Redeploy: Do a factory redeploy.
+- Format SD Card: (Beta) Format the maps SD card.
+- Check SD Card: (Beta) Check the maps SD card.
+- Reset Updater: Re-initialize the CID-Updater.
+- Watch Update: Watch the current update status and show logs.
+- Go Staged: (Beta) Set the software to be staged.
+- Retry Go Staged: (Beta) Retry to stage the software.
 
 ## Installation
 ```
