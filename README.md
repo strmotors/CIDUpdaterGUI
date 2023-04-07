@@ -29,4 +29,5 @@ python cugui.py
 ## Usage
 - Connect your computer to the diag port using a Fakra to ethernet cable.
 - Set your local IP to ```192.168.90.125```
+- Perform a seceth unlock using Toolbox or any other method you wish.
 - Run the Python script and follow the in-program instructions.
