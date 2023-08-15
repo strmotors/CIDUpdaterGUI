@@ -4,21 +4,23 @@ import pyfiglet
 import asyncio, telnetlib3, time
 import warnings
 
+# Suppress DeprecationWarning messages
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
 
+# Display a banner
 ascii_banner = pyfiglet.figlet_format("CID-Updater GUI")
 print(ascii_banner)
 print("By ST-R Motors")
 print()
 
+# Create an empty 'status' file
 open('status', 'w').close()
 
+# Initialize variable for manual update URL
 manualUpdateURL = ''
 
-# FUNCTIONS
 
-# REBOOT MCU
-
+# Function for Telnet-based operations
 async def rebootShell(reader, writer):
     while True:
         outp = await reader.read(1024)
@@ -29,6 +31,7 @@ async def rebootShell(reader, writer):
         time.sleep(5)
         break
     
+# Reboot the MCU
 def rebootMCU():
     print()
     print("The MCU is going to reboot itself.")
@@ -38,7 +41,6 @@ def rebootMCU():
     reader, writer = loop.run_until_complete(coro)
     loop.run_until_complete(writer.protocol.waiter_closed)
     
-# UPDATE FROM URL
 
 async def urlUpdateShell(reader, writer):
     while True:
@@ -51,6 +53,7 @@ async def urlUpdateShell(reader, writer):
         time.sleep(5)
         break
     
+# Update MCU from a URL
 def updateFromURL():
     print()
     print("Update the MCU from given URL.")
@@ -61,8 +64,7 @@ def updateFromURL():
     reader, writer = loop.run_until_complete(coro)
     loop.run_until_complete(writer.protocol.waiter_closed)
 
-# REDEPLOY
-
+# Software Redeploy
 async def redeployShell(reader, writer):
     while True:
         outp = await reader.read(1024)
@@ -83,8 +85,8 @@ def redeploy():
     reader, writer = loop.run_until_complete(coro)
     loop.run_until_complete(writer.protocol.waiter_closed)
 
-# SERVICE REDEPLOY
 
+# Service Redeploy
 async def sRedeployShell(reader, writer):
     while True:
         outp = await reader.read(1024)
@@ -105,8 +107,8 @@ def sRedeploy():
     reader, writer = loop.run_until_complete(coro)
     loop.run_until_complete(writer.protocol.waiter_closed)
 
-# FACTORY REDEPLOY
 
+# Factory Redeploy
 async def fRedeployShell(reader, writer):
     while True:
         outp = await reader.read(1024)
@@ -127,8 +129,8 @@ def fRedeploy():
     reader, writer = loop.run_until_complete(coro)
     loop.run_until_complete(writer.protocol.waiter_closed)
 
-# FORMAT SD CARD
 
+# Format the SD Card
 async def formatSDShell(reader, writer):
     while True:
         outp = await reader.read(1024)
@@ -150,8 +152,8 @@ def formatSD():
     loop.run_until_complete(writer.protocol.waiter_closed)
 
 
-# CHECK SD CARD
 
+# Check the SD Card
 async def checkSDShell(reader, writer):
     while True:
         outp = await reader.read(1024)
@@ -173,8 +175,7 @@ def checkSD():
     loop.run_until_complete(writer.protocol.waiter_closed)
 
 
-# RESET UPDATER
-
+# Reset the Updater
 async def resetShell(reader, writer):
     while True:
         outp = await reader.read(1024)
@@ -196,8 +197,8 @@ def reset():
     loop.run_until_complete(writer.protocol.waiter_closed)
 
 
-# WATCH UPDATE
 
+# Watch the Update
 async def watchShell(reader, writer):
     while True:
         outp = await reader.read(1024)
@@ -219,8 +220,8 @@ def watch():
     loop.run_until_complete(writer.protocol.waiter_closed)
 
 
-# GO STAGED
 
+# Go Staged
 async def goStagedShell(reader, writer):
     while True:
         outp = await reader.read(1024)
@@ -242,8 +243,8 @@ def goStaged():
     loop.run_until_complete(writer.protocol.waiter_closed)
 
 
-# RETRY GO STAGED
 
+# Retry Go Staged
 async def retryGoStagedShell(reader, writer):
     while True:
         outp = await reader.read(1024)
@@ -265,12 +266,8 @@ def retryGoStaged():
     loop.run_until_complete(writer.protocol.waiter_closed)
 
 
-# END OF FUNCTIONS
 
-# STATUS BASED FUNCTIONS
-
-# SYNC STATUS
-
+# SYNC Status
 async def statusShell(reader, writer):
     while True:
         isBreak = False
@@ -287,8 +284,8 @@ async def statusShell(reader, writer):
         if isBreak:
             break
     
-# GENERAL INFORMATION
 
+# Display General Information
 def infoCheck():   
     open('status', 'w').close()
     loop = asyncio.get_event_loop()
@@ -351,8 +348,8 @@ def infoCheck():
             print('Gateway Needs Update?: ' + actData.capitalize())
     print()
 
-# CHECK SIGNATURES
 
+# Check Signatures
 def sigCheck():
     open('status', 'w').close()
     loop = asyncio.get_event_loop()
@@ -403,8 +400,8 @@ def sigCheck():
         text_file.close()
     print()
 
-# CHECK ACTIVE PARTITION
 
+# Check the Active Partition
 def actPartCheck():
     open('status', 'w').close()
     loop = asyncio.get_event_loop()
@@ -426,8 +423,8 @@ def actPartCheck():
             print("Active Partition: /dev/mmcblk0p" + activePartition)
     print()
     
-# END OF STATUS BASED FUNCTIONS
 
+# Main menu function
 def mainMenu():
     while True:
         print("1 - General Info")
@@ -484,5 +481,6 @@ def mainMenu():
                 print()
         except ValueError:
             print("Invalid operation. Please enter a number between 0-14")
-            
+          
+# Start the main menu loop  
 mainMenu()
