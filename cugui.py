@@ -70,9 +70,9 @@ async def redeployShell(reader, writer):
         outp = await reader.read(1024)
         writer.write('redeploy\n')
         print(outp, flush=True)
-        text_file = open("logs/redeploy.txt", "a")
-        n = text_file.write(outp)
-        text_file.close()
+        #text_file = open("logs/redeploy.txt", "a")
+        #n = text_file.write(outp)
+        #text_file.close()
         time.sleep(5)
         break
     
@@ -92,9 +92,9 @@ async def sRedeployShell(reader, writer):
         outp = await reader.read(1024)
         writer.write('service-redeploy\n')
         print(outp, flush=True)
-        text_file = open("logs/service-redeploy.txt", "a")
-        n = text_file.write(outp)
-        text_file.close()
+        #text_file = open("logs/service-redeploy.txt", "a")
+        #n = text_file.write(outp)
+        #text_file.close()
         time.sleep(5)
         break
     
@@ -114,9 +114,9 @@ async def fRedeployShell(reader, writer):
         outp = await reader.read(1024)
         writer.write('factory-redeploy\n')
         print(outp, flush=True)
-        text_file = open("logs/factory-redeploy.txt", "a")
-        n = text_file.write(outp)
-        text_file.close()
+        #text_file = open("logs/factory-redeploy.txt", "a")
+        #n = text_file.write(outp)
+        #text_file.close()
         time.sleep(5)
         break
     
@@ -181,9 +181,9 @@ async def resetShell(reader, writer):
         outp = await reader.read(1024)
         writer.write('reset\n')
         print(outp, flush=True)
-        text_file = open("logs/reset.txt", "a")
-        n = text_file.write(outp)
-        text_file.close()
+        #text_file = open("logs/reset.txt", "a")
+        #n = text_file.write(outp)
+        #text_file.close()
         time.sleep(5)
         break
     
