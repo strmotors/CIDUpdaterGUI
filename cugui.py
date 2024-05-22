@@ -456,23 +456,23 @@ def mainMenu():
             elif selection == 5:
                 updateFromURL()
             elif selection == 6:
-                actPartCheck()
+                redeploy()
             elif selection == 7:
-                actPartCheck()
+                sRedeploy()
             elif selection == 8:
-                actPartCheck()
+                fRedeploy()
             elif selection == 9:
-                actPartCheck()
+                formatSD()
             elif selection == 10:
-                actPartCheck()
+                checkSD()
             elif selection == 11:
-                actPartCheck()
+                reset()
             elif selection == 12:
-                actPartCheck()
+                watch()
             elif selection == 13:
-                actPartCheck()
+                goStaged()
             elif selection == 14:
-                actPartCheck()
+                readyGoStaged()
             elif selection == 0:
                 exit()
             else:
