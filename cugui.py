@@ -47,9 +47,9 @@ async def urlUpdateShell(reader, writer):
         outp = await reader.read(1024)
         writer.write('install ' + manualUpdateURL + '\n')
         print(outp, flush=True)
-        text_file = open("logs/install.txt", "a")
-        n = text_file.write(outp)
-        text_file.close()
+        #text_file = open("logs/install.txt", "a")
+        #n = text_file.write(outp)
+        #text_file.close()
         time.sleep(5)
         break
     
