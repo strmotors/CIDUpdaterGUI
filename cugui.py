@@ -25,9 +25,9 @@ async def rebootShell(reader, writer):
     while True:
         outp = await reader.read(1024)
         writer.write('reboot\n')
-        text_file = open("logs/reboot.txt", "a")
-        n = text_file.write(outp)
-        text_file.close()
+        #text_file = open("logs/reboot.txt", "a")
+        #n = text_file.write(outp)
+        #text_file.close()
         time.sleep(5)
         break
     
@@ -136,9 +136,9 @@ async def formatSDShell(reader, writer):
         outp = await reader.read(1024)
         writer.write('format-sd-card\n')
         print(outp, flush=True)
-        text_file = open("logs/format-sd-card.txt", "a")
-        n = text_file.write(outp)
-        text_file.close()
+        #text_file = open("logs/format-sd-card.txt", "a")
+        #n = text_file.write(outp)
+        #text_file.close()
         time.sleep(5)
         break
     
@@ -159,9 +159,9 @@ async def checkSDShell(reader, writer):
         outp = await reader.read(1024)
         writer.write('check-sd-card\n')
         print(outp, flush=True)
-        text_file = open("logs/check-sd-card.txt", "a")
-        n = text_file.write(outp)
-        text_file.close()
+        #text_file = open("logs/check-sd-card.txt", "a")
+        #n = text_file.write(outp)
+        #text_file.close()
         time.sleep(5)
         break
     
@@ -204,9 +204,9 @@ async def watchShell(reader, writer):
         outp = await reader.read(1024)
         writer.write('watch\n')
         print(outp, flush=True)
-        text_file = open("logs/watch.txt", "a")
-        n = text_file.write(outp)
-        text_file.close()
+        #text_file = open("logs/watch.txt", "a")
+        #n = text_file.write(outp)
+        #text_file.close()
         time.sleep(5)
         break
     
@@ -227,9 +227,9 @@ async def goStagedShell(reader, writer):
         outp = await reader.read(1024)
         writer.write('gostaged\n')
         print(outp, flush=True)
-        text_file = open("logs/gostaged.txt", "a")
-        n = text_file.write(outp)
-        text_file.close()
+        #text_file = open("logs/gostaged.txt", "a")
+        #n = text_file.write(outp)
+        #text_file.close()
         time.sleep(5)
         break
     
@@ -250,9 +250,9 @@ async def retryGoStagedShell(reader, writer):
         outp = await reader.read(1024)
         writer.write('retry-gostaged\n')
         print(outp, flush=True)
-        text_file = open("logs/retry-gostaged.txt", "a")
-        n = text_file.write(outp)
-        text_file.close()
+        #text_file = open("logs/retry-gostaged.txt", "a")
+        #n = text_file.write(outp)
+        #text_file.close()
         time.sleep(5)
         break
     
